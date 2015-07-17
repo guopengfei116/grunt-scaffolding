@@ -1,0 +1,32 @@
+{
+  "name": "pedometer",
+  "version": "0.1.0",
+  "description": "计步器活动页面",
+  "dependencies": {
+    "mime": "^1.2.11",
+    "upyun": "^1.1.2"
+  },
+  "projectCfg": {
+    "taskCfgPath": "grunt_task_cfg",
+    "src": "develop",
+    "dpDest": "deploy",
+    "pdDest": "production"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-replace": "^2.0.0",
+    "grunt-rev": "^0.1.0",
+    "grunt-spritesmith": "^3.3.0",
+    "grunt-usemin": "^3.0.0",
+    "underscore": "^1.8.3"
+  }
+}
