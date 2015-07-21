@@ -14,8 +14,8 @@
 
 ### 3. 安装项目依赖
 1.  window在运行窗口中输入cmd，进入dos命令行
-2.  输入 cd c:\**项目路径**，进入grunt项目的根目录
-3.  grunt工具所需的两个基本文件package.json和Gruntfile.js按照规范需放在项目的根目录
+2.  先切换到项目所在的磁盘下，输入D:，回车便切换到D盘，然后输入cd 项目路径，进入grunt项目的根目录
+3.  grunt工具所需的两个基本文件package.json和Gruntfile.js按照规范需放在项目的根目录，所以输入dir，会看到这俩文件
 4.  输入 npm install, 回车自动安装package.json文件配置的依赖包
 
 ### 4. 运行grunt
@@ -32,7 +32,7 @@
 
 1.  最外层是整个grunt项目
 2.  根目录Gruntfile.js和package.json是必要的两个文件，分别用来自定义grunt任务和项目元数据
-3.  根目录lib目录存放了一些grunt任务所需的自定义node模块
+3.  根目录lib目录存放了一些公共的node模块和一些自定义的grunt任务
 4.  根目录develop是我们开发时所写代码的目录，也就是构建代码的源文件目录
 5.  根目录production是grunt构建生产的代码目录，包含一些合并，替换操作，用来调试代码
 6.  根目录deploy是grunt构建生产的用来部署的代码，相比production多了压缩、变量混淆功能，不方便外界查看源码，当然也不方便我们开发调试。
