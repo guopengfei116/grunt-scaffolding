@@ -3,3 +3,5 @@ exports.options = {
     sourcemap: false,
     trace: false
 };
+
+console.log('sass config initialized');

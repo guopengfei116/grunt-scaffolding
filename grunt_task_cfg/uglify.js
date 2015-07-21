@@ -8,7 +8,7 @@ if(!gruntProject.debug) {
     exports.deploy = {
         expand: true,
         cwd: gruntProject.dest,
-        src: ['/UG/**/*.js'],
+        src: ['**/*.js'],
         dest: gruntProject.dest
     };
 /*
@@ -18,9 +18,9 @@ if(!gruntProject.debug) {
     exports.navegaki = {
         expand: true,
         cwd: gruntProject.dest,
-        src: ['navegaki/js/**.js'],
+        src: ['common/js/*.js'],
         dest: gruntProject.dest
     };
 }
-console.log(gruntProject.dest);
-console.log(222);
+
+console.log('uglify config initialized');

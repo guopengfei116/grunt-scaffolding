@@ -10,3 +10,5 @@ exports.UG = {
         dest: gruntProject.dest
     }]
 };
+
+console.log('imagemin config initialized');

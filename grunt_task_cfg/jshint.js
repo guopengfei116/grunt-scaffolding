@@ -16,3 +16,5 @@ exports.options = {
 };
 
 exports.hint = [gruntProject.src + '/UG/*.js'];
+
+console.log('jshint config initialized');

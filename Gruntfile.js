@@ -56,8 +56,8 @@ module.exports = function (grunt) {
         taskModuleNames.forEach(function (val) {
 
             //加载已配置的task模块
-            taskReg.test(val) && console.log(val);
             taskReg.test(val) && grunt.loadNpmTasks(val);
+            taskReg.test(val) && grunt.log.ok(val + ' task loaded');
         });
     });
 
