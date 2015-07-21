@@ -9,7 +9,7 @@
 ### 2. 安装grunt-cli
  
 > #### 2.1 window环境
-1. window在运行窗口中输入cmd，进入dos命令行
+1. 在左下角程序中找到运行，在运行窗口中输入cmd，回车打开dos命令行
 2. 输入 npm install -g grunt-cli，回车进行安装，如安装失败可能是因为权限不足
 
 ### 3. 安装项目依赖
