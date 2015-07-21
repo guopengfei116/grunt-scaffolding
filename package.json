@@ -1,11 +1,7 @@
 {
-  "name": "pedometer",
+  "name": "osagames",
   "version": "0.1.0",
-  "description": "计步器活动页面",
-  "dependencies": {
-    "mime": "^1.2.11",
-    "upyun": "^1.1.2"
-  },
+  "description": "香港绿洲",
   "projectCfg": {
     "taskCfgPath": "grunt_task_cfg",
     "src": "develop",
