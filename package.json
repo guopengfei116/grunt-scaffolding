@@ -22,6 +22,7 @@
     "grunt-include-replace": "^2.0.0",
     "grunt-rev": "^0.1.0",
     "grunt-spritesmith": "^3.3.0",
+    "grunt-string-replace": "^1.2.0",
     "grunt-usemin": "^3.0.0",
     "underscore": "^1.8.3"
   }
