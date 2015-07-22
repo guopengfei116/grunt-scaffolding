@@ -20,6 +20,8 @@ module.exports = function (grunt) {
         grunt.fail.warn('非规范的grunt项目', 2);
     }
 
+    global.grunt = grunt;
+
     //获取grunt-package配置
     pkgCfg = grunt.file.readJSON('package.json');
 
@@ -74,6 +76,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('production', ['copy', 'concat']);
-    grunt.registerTask('deploy', ['copy', 'concat', 'uglify']);
+    grunt.registerTask('production', ['copy', 'concat', 'string-replace']);
+    grunt.registerTask('deploy', ['copy', 'concat', 'uglify', 'string-replace']);
 };
