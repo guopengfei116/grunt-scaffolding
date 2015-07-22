@@ -8,10 +8,10 @@ var taskNameId = 1;
 !function buildCigBefore () {
     var i, j, jsModues, item;
 
-    //获取所有项目
+    //获取所有项目目录名
     var items = util.getChildrenFiles(gruntProject.src);
 
-    //遍历项目
+    //遍历所有项目
     for(i = items.length - 1; i >= 0; i--) {
         item = items[i];
 

@@ -4,4 +4,14 @@ exports.options = {
     trace: false
 };
 
+exports.files = [
+    {
+        expand: true,
+        cwd: gruntProject.src,
+        src: ['*/sass/*.scss'],
+        dest: gruntProject.dest,
+        ext: '.css'
+    }
+];
+
 console.log('sass config initialized');

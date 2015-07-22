@@ -3,7 +3,9 @@
 * */
 if(!gruntProject.debug) {
     exports.options = {
-        mangle: true
+        mangle: {
+            except: ['jQuery', 'CXG']
+        }
     };
     exports.deploy = {
         expand: true,

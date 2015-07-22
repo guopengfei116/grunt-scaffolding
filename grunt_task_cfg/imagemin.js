@@ -6,7 +6,7 @@ exports.UG = {
     files: [{
         expand: true,
         cwd: gruntProject.src,
-        src: '**/*.{png,jpg,gif}',
+        src: '*/img/*.{png,jpg,gif}',
         dest: gruntProject.dest
     }]
 };

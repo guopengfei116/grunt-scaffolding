@@ -4,18 +4,18 @@
 
 ### 1. 安装node
 
-######打开 <https://nodejs.org/download/> ，下载与自己操作系统相符的包进行安装
+######通过 <https://nodejs.org/download/> ，下载与自己操作系统相符的包进行安装
 
 ### 2. 安装grunt-cli
  
-> #### 2.1 window环境
-1. 在左下角程序中找到运行，在运行窗口中输入cmd，回车打开dos命令行
-2. 输入 npm install -g grunt-cli，回车进行安装，如安装失败可能是因为权限不足
+1. window在窗口左下角的程序中找到运行，在运行文本框中输入cmd，然后回车打开dos命令行
+2. 输入 npm install -g grunt-cli 命令，回车进行安装，如安装失败可能是因为执行权限不足
 
-### 3. 安装项目依赖
-1.  window在运行窗口中输入cmd，进入dos命令行
-2.  先切换到项目所在的磁盘下，输入D:，回车便切换到D盘，然后输入cd 项目路径，进入grunt项目的根目录
-3.  grunt工具所需的两个基本文件package.json和Gruntfile.js按照规范需放在项目的根目录，所以输入dir，会看到这俩文件
+### 3. 安装grunt依赖
+1.  进入命令行，进入项目路径
+2.  先切换到项目所在的磁盘下，输入D:，回车便切换到D盘
+3.  然后输入cd 项目路径，进入grunt项目的根目录，
+    grunt工具所需的两个基本文件package.json和Gruntfile.js按照规范需放在项目的根目录，所以输入dir，会看到这俩文件
 4.  输入 npm install, 回车自动安装package.json文件配置的依赖包
 
 ### 4. 运行grunt
