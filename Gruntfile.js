@@ -40,9 +40,9 @@ module.exports = function (grunt) {
     //获取grunt-task模块名
     taskModuleNames = util.getTaskModuleName(TASK_MODULES_PATH);
 
-    //构建grunt配置
     initCfg.pkg = pkgCfg;
 
+    //构建grunt配置
     taskCfgs.forEach(function (val) {
 
         //获取task模块的grunt配置名
@@ -76,6 +76,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('production', ['copy', 'concat', 'string-replace']);
-    grunt.registerTask('deploy', ['copy', 'concat', 'uglify', 'string-replace']);
+    grunt.registerTask('production', ['clean', 'copy', 'concat', 'string-replace']);
+    grunt.registerTask('deploy', ['clean', 'copy', 'concat', 'uglify', 'string-replace']);
 };
