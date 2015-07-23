@@ -20,6 +20,7 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-include-replace": "^2.0.0",
+    "grunt-preprocess": "^5.0.1",
     "grunt-rev": "^0.1.0",
     "grunt-spritesmith": "^3.3.0",
     "grunt-string-replace": "^1.2.0",
