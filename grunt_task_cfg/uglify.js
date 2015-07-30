@@ -1,5 +1,5 @@
 /*
-* 部署模式压缩全部文件
+* 只有在部署模式下才会压缩全部文件
 * */
 if(!gruntProject.debug) {
     exports.options = {
@@ -14,7 +14,7 @@ if(!gruntProject.debug) {
         dest: gruntProject.dest
     };
 /*
-* 开发模式自定义
+* 预留开发模式下自定义配置
 * */
 }else {
     exports.navegaki = {
