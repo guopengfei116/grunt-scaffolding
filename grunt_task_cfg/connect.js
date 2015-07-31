@@ -10,6 +10,9 @@ exports.options = {
     livereload : 79513
 };
 
+/**
+ * 调试模式指向开发目录，部署模式指向上线目录
+ * */
 exports.server = {
     options : {
         open : true,
