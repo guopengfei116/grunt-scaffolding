@@ -23,3 +23,5 @@ if (isOpenCompress) {
     * */
     exports.compress = {};
 }
+
+console.log('compress config initialized');
