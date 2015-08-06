@@ -1,0 +1,24 @@
+@import "../../common/sass/buttons/buttons";
+
+header {
+    height: 50px;
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+main {
+    height: 500px;
+}
+
+footer {
+    text-align: center;
+    ul {
+        @include clearfix();
+        li {
+            width:25%;
+            float: left;
+        }
+    }
+}

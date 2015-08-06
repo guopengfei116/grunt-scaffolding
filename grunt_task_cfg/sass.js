@@ -12,14 +12,15 @@ exports.options = {
 /**
  * 编译scss到开发目录
  * */
-exports.files = [
-    {
-        expand: true,
-        cwd: gruntProject.src,
-        src: ['*/sass/**.scss'],
-        dest: gruntProject.prd,
-        ext: '.css'
-    }
-];
-
+exports.all = {
+    files: [
+        {
+            expand: true,
+            cwd: gruntProject.src,
+            src: ['*/sass/**/*.scss'],
+            dest: gruntProject.prd,
+            ext: '.css'
+        }
+    ]
+};
 console.log('sass config initialized');
