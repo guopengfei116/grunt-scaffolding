@@ -6,6 +6,8 @@ var TASK_MODULES_PATH = 'node_modules';
 module.exports = function (grunt) {
     var pkgCfg, projectCfg, taskCfgs, taskModuleNames, initCfg = {}, isDeploy = false;
 
+    var arguments = process.argv.splice(2);
+
     //项目根路径（根据grunt规范，主进程在项目根路径）
     var CWD = process.cwd();
     var er = new Error('需要一个正确的grunt对象');
@@ -26,8 +28,8 @@ module.exports = function (grunt) {
     pkgCfg = grunt.file.readJSON('package.json');
 
     //是否部署代码
-    isDeploy = grunt.option('deploy') || false;
-
+    isDeploy = grunt.option('deploy') || arguments[0] == 'deploy' || false;
+console.log(isDeploy);
     //添加全局变量
     util.initGlobalConstant(pkgCfg, isDeploy);
 
@@ -101,7 +103,7 @@ module.exports = function (grunt) {
     grunt.registerTask('production-debug', ['production', 'connect']);
 
     /*
-    *  部署模式任务，通过grunt deploy 命令调用。构建流程：
+    *  部署模式任务，通过grunt deploy 或 grunt deploy --deploy 命令调用。构建流程：
     *  1、使用开发模式任务
     *  2、混淆压缩js --> 部署目录
     *  3、混淆压缩css --> 部署目录(默认关闭状态，因为如果全部使用scss编写，则已经被压缩)
@@ -109,10 +111,10 @@ module.exports = function (grunt) {
     *  5、剩余未操作文件复制 --> 部署目录
     *  6、通过gzip算法对部署目录的html、js、css文件进行二次压缩 --> 部署目录(默认关闭状态)
     * */
-    grunt.registerTask('deploy', ['production', 'uglify', 'compress', 'connect']);
+    grunt.registerTask('deploy', ['production', 'uglify', 'compress']);
 
     /**
-     * 开发模式调试任务，通过运行 grunt --deploy 或 grunt deploy-debug 命令调用。构建流程：
+     * 开发模式调试任务，通过运行 grunt --deploy 或 grunt deploy-debug --deploy 命令调用。构建流程：
      * 1、使用部署模式任务
      * 2、开启静态文件服务器 --> 部署目录
      * 3、开启文件监听 --> 部署目录

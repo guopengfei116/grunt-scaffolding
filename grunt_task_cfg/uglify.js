@@ -9,7 +9,7 @@ if(!gruntProject.debug) {
     };
     exports.deploy = {
         expand: true,
-        cwd: gruntProject.dest,
+        cwd: gruntProject.prd,
         src: ['**/*.js'],
         dest: gruntProject.dest
     };
@@ -19,7 +19,7 @@ if(!gruntProject.debug) {
 }else {
     exports.navegaki = {
         expand: true,
-        cwd: gruntProject.dest,
+        cwd: gruntProject.prd,
         src: ['common/js/*.js'],
         dest: gruntProject.dest
     };
