@@ -75,8 +75,10 @@ module.exports = function (grunt) {
 
     /**
      *  注册默认任务(任务调用简写方式)，根据参数调用相关的构建模式任务，默认调用其构建模式的调试模式。
-     *  运行 grunt 命令调用 'production-debug' 任务，
-     *  运行 grunt --deply 调用 'deploy-debug' 任务。
+     *  运行 grunt 调用 'production-debug' 任务，
+     *  运行 grunt --deply 调用 'deploy-debug' 任务,
+     *  运行 grunt production 调用 'production' 任务，
+     *  运行 grunt deploy 调用 'deploy' 任务，
      * */
     grunt.registerTask('default', function () {
         if(isDeploy) {
