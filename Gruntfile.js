@@ -109,11 +109,11 @@ module.exports = function (grunt) {
 
     /*
     *  部署模式任务，通过grunt deploy 或 grunt deploy --deploy 命令调用。构建流程：
-    *  1、使用开发模式任务，修改了其中的copy操作，把不需要操作的文件复制 --> 部署目录(css除外)
+    *  1、使用开发模式任务，增加了copy任务，把部分文件复制 --> 部署目录
     *  2、混淆压缩js --> 部署目录
-    *  3、混淆压缩css --> 部署目录(为了统一压缩源文件目录，在copy操作中把css复制到了开发目录)
+    *  3、混淆压缩css --> 部署目录
     *  4、压缩图片 --> 部署目录
-    *  5、通过gzip算法对部署目录的html、js、css文件进行二次压缩 --> 部署目录(默认关闭状态)
+    *  5、通过gzip算法对部署目录下的非图片文件进行二次压缩 --> 部署目录(默认关闭状态)
     * */
     grunt.registerTask('deploy', ['production', 'uglify', 'cssmin', 'imagemin', 'compress']);
 
