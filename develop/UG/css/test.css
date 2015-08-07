@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*
+
+测试注释是否被清除
+
+*/
+
 html {
   font-size: 16px;
 }

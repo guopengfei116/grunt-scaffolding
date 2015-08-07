@@ -15,7 +15,6 @@ exports.common = {
 
 /**
  *  部署模式，
- *  sass目录下的css子文件
  *  tpl目录下的html子文件
  *  img目录下的不支持压缩的子文件
  * */
@@ -24,7 +23,7 @@ if(!gruntProject.debug){
         expand: true,
         flatten: false,
         cwd: gruntProject.prd,
-        src: ['*/sass/*.css', '*/tpl/*.html', '*/img/*.*','!*/img/*.{png,jpg,jpeg}'],
+        src: ['*/tpl/*.html', '*/img/*.*','!*/img/*.{png,jpg,jpeg}'],
         dest: gruntProject.dest
     };
 }

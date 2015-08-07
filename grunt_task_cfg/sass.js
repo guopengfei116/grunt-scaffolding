@@ -10,7 +10,8 @@ exports.options = {
 };
 
 /**
- * 编译scss到开发目录
+ * 开发模式编译scss到调试目录
+ * 部署模式编译scss到生产目录
  * */
 exports.all = {
     files: [
@@ -18,7 +19,7 @@ exports.all = {
             expand: true,
             cwd: gruntProject.src,
             src: ['*/sass/*.scss'],
-            dest: gruntProject.prd,
+            dest: gruntProject.debug ? gruntProject.prd : gruntProject.dest,
             ext: '.css'
         }
     ]
