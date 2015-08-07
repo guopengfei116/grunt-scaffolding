@@ -1,3 +1,8 @@
+
+/*
+* js语法检查
+* 因现在没有js语法规范，所以默认关闭
+* */
 exports.options = {
     boreser: true,
     node: true,

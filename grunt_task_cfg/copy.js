@@ -1,26 +1,33 @@
 
 /**
- * 调试模式，copy未操作文件到开发目录
+ * copy文件到调试目录
+ * js目录下的js子文件
+ * css目录下的css子文件
+ * img目录下的子文件
  * */
-if(gruntProject.debug) {
-    exports.common = {
-        expand: true,
-        flatten: false,
-        cwd: gruntProject.src,
-        src: ['*/js/*.js', '*/css/*.css', '*/img/*'],
-        dest: gruntProject.prd,
-        filter: 'isFile'
-    };
+exports.common = {
+    expand: true,
+    flatten: false,
+    cwd: gruntProject.src,
+    src: ['*/js/*.js', '*/css/*.css', '*/img/*'],
+    dest: gruntProject.prd,
+    filter: 'isFile'
+};
+
 /**
- *  部署模式，copy不需要二次操作的文件到部署目录
+ *  部署模式，
+ *  sass目录下的css子文件
+ *  tpl目录下的html子文件
+ *  img目录下的不支持压缩的子文件
  * */
-}else {
-    exports.common = {
+if(!gruntProject.debug){
+    exports.deploy = {
         expand: true,
         flatten: false,
         cwd: gruntProject.prd,
-        src: ['*/tpl/*.html', '*/img/*','!*/img/*.{png,jpg,jpeg}'],
-        dest: gruntProject.dest
+        src: ['*/sass/*.css', '*/tpl/*.html', '*/img/*','!*/img/*.{png,jpg,jpeg}'],
+        dest: gruntProject.dest,
+        filter: 'isFile'
     };
 }
 

@@ -93,11 +93,11 @@ module.exports = function (grunt) {
     *  1、清楚调试代码目录
     *  2、合并js --> 调试目录
     *  3、构建html --> 调试目录
-    *  4、解析sass --> 调试目录
-    *  5、合成雪碧图 --> 调试目录
+    *  4、合成雪碧图 --> 调试目录(scss文件被生产到源开发目录，所以开发时可以预先使用)
+    *  5、解析sass --> 调试目录
     *  6、剩余未操作文件复制 --> 调试目录
     * */
-    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sass', 'sprite', 'copy']);
+    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sprite', 'sass', 'copy']);
 
     /**
      * 开发模式调试任务，通过运行 grunt 或 grunt production-debug 命令调用。构建流程：
@@ -109,14 +109,13 @@ module.exports = function (grunt) {
 
     /*
     *  部署模式任务，通过grunt deploy 或 grunt deploy --deploy 命令调用。构建流程：
-    *  1、使用开发模式任务
+    *  1、使用开发模式任务，修改了其中的copy操作，把不需要操作的文件复制 --> 部署目录(css除外)
     *  2、混淆压缩js --> 部署目录
-    *  3、混淆压缩css --> 部署目录(默认关闭状态，因为如果全部使用scss编写，则已经被压缩)
+    *  3、混淆压缩css --> 部署目录(为了统一压缩源文件目录，在copy操作中把css复制到了开发目录)
     *  4、压缩图片 --> 部署目录
-    *  5、剩余未操作文件复制 --> 部署目录
-    *  6、通过gzip算法对部署目录的html、js、css文件进行二次压缩 --> 部署目录(默认关闭状态)
+    *  5、通过gzip算法对部署目录的html、js、css文件进行二次压缩 --> 部署目录(默认关闭状态)
     * */
-    grunt.registerTask('deploy', ['production', 'uglify', 'compress']);
+    grunt.registerTask('deploy', ['production', 'uglify', 'cssmin', 'imagemin', 'compress']);
 
     /**
      * 开发模式调试任务，通过运行 grunt --deploy 或 grunt deploy-debug --deploy 命令调用。构建流程：
