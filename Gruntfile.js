@@ -29,56 +29,61 @@ module.exports = function (grunt) {
 
     //是否部署代码
     isDeploy = grunt.option('deploy') || arguments[0] == 'deploy' || false;
-console.log(isDeploy);
+
     //添加全局变量
     util.initGlobalConstant(pkgCfg, isDeploy);
 
     //获取工程结构配置
     projectCfg = pkgCfg.projectCfg || {};
 
-    //获取所有grunt—task配置
-    taskCfgs = util.getChildrenFiles(projectCfg.taskCfgPath);
+    //获取所有grunt—task的配置文件
+    taskCfgfiles = util.getChildrenFiles(projectCfg.taskCfgPath);
 
-    //获取grunt-task模块名
+    //在node_modules文件夹中获取grunt-task相关的模块名
     taskModuleNames = util.getTaskModuleName(TASK_MODULES_PATH);
 
     initCfg.pkg = pkgCfg;
 
-    //构建grunt配置
-    taskCfgs.forEach(function (val) {
+    /*
+    * 通过遍历配置文件，得到文件名称，
+    * 依据文件名称与模块名称的约定关系，构建匹配正则，
+    * 遍历所有的grunt—task模块，依据正则来验证哪些模块已经配置，
+    * 只有配置过的模块才会被grunt所load
+    * */
+    taskCfgfiles.forEach(function (val) {
 
-        //获取task模块的grunt配置名
         var taskCfgName = path.basename(val, '.js');
 
-        //构建匹配task模块名的正则
-        var taskReg = new RegExp('^grunt-(' + taskCfgName + '|' + 'contrib-' + taskCfgName + ')$');
+        var taskReg = new RegExp('^grunt-(' + taskCfgName + '[a-z]*' + '|' + 'contrib-' + taskCfgName + ')$');
 
-        //配置构建
+        //归纳配置
         initCfg[taskCfgName] = require(val);
 
-        //遍历task模块
-        taskModuleNames.forEach(function (val) {
-
+        //找到匹配的模块进行load
+        for(var i = taskModuleNames.length - 1; i >= 0; i--) {
             //加载已配置的task模块
-            taskReg.test(val) && grunt.loadNpmTasks(val);
-            taskReg.test(val) && grunt.log.ok(val + ' task loaded');
-        });
+            if(taskReg.test(taskModuleNames[i])) {
+                grunt.loadNpmTasks(taskModuleNames[i]);
+                grunt.log.ok((taskModuleNames[i] + ' task loaded').yellow);
+                break;
+            }
+        }
     });
 
     //初始化grunt配置
     grunt.initConfig(initCfg);
 
     /**
-     *  注册默认任务(任务调用简写方式)，根据参数调用相关的构建模式任务，默认调用其构建模式的调试模式，。
+     *  注册默认任务(任务调用简写方式)，根据参数调用相关的构建模式任务，默认调用其构建模式的调试模式。
      *  运行 grunt 命令调用 'production-debug' 任务，
      *  运行 grunt --deply 调用 'deploy-debug' 任务。
      * */
     grunt.registerTask('default', function () {
         if(isDeploy) {
-            grunt.log.write('####部署环境代码调试####');
+            grunt.log.subhead('####部署环境代码调试####'.red);
             grunt.task.run('deploy-debug');
         }else {
-            grunt.log.ok('====开发环境代码调试====');
+            grunt.log.subhead('====开发环境代码调试===='.green);
             grunt.task.run('production-debug');
         }
     });
@@ -92,7 +97,7 @@ console.log(isDeploy);
     *  5、合成雪碧图 --> 调试目录
     *  6、剩余未操作文件复制 --> 调试目录
     * */
-    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sass', 'copy']);
+    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sass', 'sprite', 'copy']);
 
     /**
      * 开发模式调试任务，通过运行 grunt 或 grunt production-debug 命令调用。构建流程：
