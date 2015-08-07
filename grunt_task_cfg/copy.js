@@ -9,9 +9,8 @@ exports.common = {
     expand: true,
     flatten: false,
     cwd: gruntProject.src,
-    src: ['*/js/*.js', '*/css/*.css', '*/img/*'],
-    dest: gruntProject.prd,
-    filter: 'isFile'
+    src: ['*/js/*.js', '*/css/*.css', '*/img/*.*'],
+    dest: gruntProject.prd
 };
 
 /**
@@ -25,9 +24,8 @@ if(!gruntProject.debug){
         expand: true,
         flatten: false,
         cwd: gruntProject.prd,
-        src: ['*/sass/*.css', '*/tpl/*.html', '*/img/*','!*/img/*.{png,jpg,jpeg}'],
-        dest: gruntProject.dest,
-        filter: 'isFile'
+        src: ['*/sass/*.css', '*/tpl/*.html', '*/img/*.*','!*/img/*.{png,jpg,jpeg}'],
+        dest: gruntProject.dest
     };
 }
 

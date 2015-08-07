@@ -17,7 +17,7 @@ exports.all = {
         {
             expand: true,
             cwd: gruntProject.src,
-            src: ['*/sass/**/*.scss'],
+            src: ['*/sass/*.scss'],
             dest: gruntProject.prd,
             ext: '.css'
         }
