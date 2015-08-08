@@ -1,0 +1,661 @@
+@charset "UTF-8";
+/*
+
+测试注释是否被清除
+
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input, textarea, select {
+  *font-size: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+em, i {
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+legend {
+  color: #000;
+}
+
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+body {
+  font-family: "Microsoft YaHei",Tahoma,Helvetica,arial,sans-serif;
+  margin: 0 auto;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background-image: url(../../images/gehua/background.png);
+  color: #fff;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.posi-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.posi-right {
+  position: absolute;
+  right: 14px;
+  top: 0;
+}
+
+.cf:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/*----------------------------首页---------------------------*/
+.header {
+  margin: 0 auto;
+  width: 1100px;
+  padding-top: 30px;
+  height: 71px;
+}
+.header__logo {
+  margin-right: 30px;
+  width: 71px;
+  height: 70px;
+  background-image: url(../../images/gehua/logo.png);
+  background-repeat: no-repeat;
+}
+.header__title {
+  height: 38px;
+  width: 161px;
+  background-image: url(../../images/gehua/font_logo.png);
+  background-repeat: no-repeat;
+}
+.header__desc {
+  margin-top: 8px;
+  height: 23px;
+  width: 158px;
+  background-image: url(../../images/gehua/font.png);
+  background-repeat: no-repeat;
+}
+
+.content {
+  position: relative;
+  margin: 50px auto 0;
+  width: 1096px;
+}
+.content__department {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 544px;
+  height: 504px;
+}
+.content__department__item {
+  position: absolute;
+  display: block;
+  width: 266px;
+  height: 160px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  /*
+&:hover {
+	z-index: 10;
+	width: 290px;
+	height: 184px;
+	border:2px solid #fff;
+}
+*/
+}
+.content__department__item__icon {
+  width: 100px;
+  height: 160px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.content__department__item__name {
+  float: left;
+  padding-left: 24px;
+  line-height: 160px;
+  font-size: 29px;
+}
+.content__department__item1 {
+  left: 0;
+  top: 0;
+  background-color: #3ec3be;
+  /*
+&:hover {
+	left: -12px;
+	top: -12px;
+}
+*/
+}
+.content__department__item1 .content__department__item__icon {
+  background-image: url("../../images/gehua/erke.png");
+}
+.content__department__item2 {
+  right: 0;
+  top: 0;
+  background-color: #f0bf3c;
+  /*
+&:hover {
+	right: -12px;
+	top: -12px;
+}
+*/
+}
+.content__department__item2 .content__department__item__icon {
+  background-image: url("../../images/gehua/neike.png");
+}
+.content__department__item3 {
+  left: 0;
+  top: 172px;
+  background-color: #86c02f;
+  /*
+&:hover {
+	left: -12px;
+	top: 160px;
+}
+*/
+}
+.content__department__item3 .content__department__item__icon {
+  background-image: url("../../images/gehua/jiaonang.png");
+}
+.content__department__item4 {
+  right: 0;
+  top: 172px;
+  background-color: #3d91de;
+  /*
+&:hover {
+	right: -12px;
+	top: 160px;
+}
+*/
+}
+.content__department__item4 .content__department__item__icon {
+  background-image: url("../../images/gehua/zhongyi.png");
+}
+.content__department__item5 {
+  left: 0;
+  top: 344px;
+  background-color: #8b7fc7;
+  /*
+&:hover {
+	left: -12px;
+	top: 332px;
+}
+*/
+}
+.content__department__item5 .content__department__item__icon {
+  background-image: url("../../images/gehua/zhongliu.png");
+}
+.content__department__item6 {
+  right: 0;
+  top: 344px;
+  background-color: #e56e9e;
+  /*
+&:hover {
+	right: -12px;
+	top: 332px;
+}
+*/
+}
+.content__department__item6 .content__department__item__icon {
+  background-image: url("../../images/gehua/xinnao.png");
+}
+.content__problem {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 504px;
+  border: 2px solid #6e9bb7;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.content__problem--hover {
+  top: -5px;
+  right: -5px;
+  width: 504px;
+  height: 508px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 44px #c0dff3;
+}
+.content__problem__title {
+  display: block;
+  margin-top: 12px;
+  padding-left: 26px;
+  line-height: 36px;
+  font-size: 27px;
+}
+.content__problem__list {
+  display: block;
+  padding-left: 26px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+  height: 107px;
+  /*
+&:hover {
+	background-color: #37688a;
+}
+*/
+}
+.content__problem__list__avatar {
+  float: left;
+  width: 107px;
+  height: 107px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+}
+.content__problem__list__info {
+  float: left;
+  margin-left: 24px;
+}
+.content__problem__list__info__name {
+  line-height: 28px;
+  font-size: 24px;
+}
+.content__problem__list__info__hospital {
+  margin-top: 18px;
+  line-height: 20px;
+  font-size: 18px;
+}
+.content__problem__list__info__answer {
+  margin-top: 18px;
+  line-height: 20px;
+  font-size: 18px;
+  color: #bac4cd;
+}
+
+.department__item--hover {
+  z-index: 10;
+  width: 288px;
+  height: 182px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 40px #082652;
+}
+.department__item--hover__item1 {
+  left: -12px;
+  top: -12px;
+}
+.department__item--hover__item2 {
+  right: -12px;
+  top: -12px;
+}
+.department__item--hover__item3 {
+  left: -12px;
+  top: 160px;
+}
+.department__item--hover__item4 {
+  right: -12px;
+  top: 160px;
+}
+.department__item--hover__item5 {
+  left: -12px;
+  top: 332px;
+}
+.department__item--hover__item6 {
+  right: -12px;
+  top: 332px;
+}
+.department__item--hover .icon {
+  height: 184px;
+}
+.department__item--hover .name {
+  font-size: 32px;
+  line-height: 184px;
+}
+
+/*----------------------------子页面nav---------------------------*/
+.nav {
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 1100px;
+  height: 50px;
+  font-size: 28px;
+}
+.nav__title {
+  float: left;
+  padding: 0 9px;
+  border: 2px solid transparent;
+  line-height: 48px;
+  /*
+  &:hover {
+  	cursor: pointer;
+  	padding:0 8px;
+  	border:3px solid #fff;
+  	@include box-radius(3px, 3px);
+  	box-shadow:0 0 40px #fff;
+  	line-height: 46px;
+  }
+  */
+}
+.nav__title--spacing {
+  margin-right: 52px;
+}
+.nav__title--hover {
+  cursor: pointer;
+  padding: 0 9px;
+  border: 2px solid #fff;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 40px 3px #c0dff3;
+  line-height: 48px;
+}
+.nav__title--current {
+  border: 2px solid #fff;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  padding: 0 9px;
+  line-height: 49px;
+}
+
+/*----------------------------问题列表---------------------------*/
+.problem {
+  position: relative;
+  width: 100%;
+}
+.problem__page-up {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  display: none;
+  width: 35px;
+  height: 62px;
+  background: url("../../images/gehua/page_left.png") no-repeat;
+}
+.problem__page-down {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 200px;
+  width: 35px;
+  height: 62px;
+  background-image: url("../../images/gehua/page_right.png");
+}
+.problem__set {
+  margin: 0 auto;
+  width: 1100px;
+  min-height: 578px;
+  overflow: hidden;
+}
+.problem__set--box {
+  width: 2120px;
+  height: 548px;
+}
+.problem__set__row {
+  position: relative;
+  width: 1060px;
+  margin-top: 36px;
+  height: 244px;
+}
+.problem__set__row__list {
+  width: 500px;
+  height: 244px;
+}
+.problem__set__row__list__doctor {
+  float: left;
+  width: 90px;
+}
+.problem__set__row__list__doctor__avatar {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+}
+.problem__set__row__list__doctor__name {
+  margin-top: 22px;
+  line-height: 26px;
+  font-size: 24px;
+}
+.problem__set__row__list__doctor__title {
+  margin-top: 10px;
+  line-height: 20px;
+  font-size: 18px;
+}
+.problem__set__row__list__answer {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  padding-left: 22px;
+  padding-right: 22px;
+  width: 352px;
+  height: 240px;
+  border: 2px solid #678aa3;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  /*
+&:hover {
+	top: -10px;
+	right: -26px;
+	padding-left: 32px;
+	padding-right: 32px;
+	width: 360px;
+	height: 260px;
+	box-shadow: 0 0 26px #fff;
+}
+*/
+}
+.problem__set__row__list__answer__ask {
+  margin-top: 22px;
+  font-size: 20px;
+}
+.problem__set__row__list__answer__specific {
+  margin-top: 22px;
+  padding: 10px 16px;
+  background-color: #356587;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  font-size: 18px;
+}
+.problem__set__row__list__answer__site {
+  margin-top: 20px;
+  color: a9b3bf;
+}
+
+.problem__set__row__list__answer--hover {
+  top: -10px;
+  right: -26px;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 356px;
+  height: 256px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 34px 2px #c0dff3;
+}
+.problem__set__row__list__answer--hover .ask {
+  margin-top: 16px;
+  font-size: 19px;
+}
+.problem__set__row__list__answer--hover .specific {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.problem__set--box__page {
+  float: left;
+  width: 1060px;
+  margin-right: 40px;
+}
+
+/*----------------------------问题详情---------------------------*/
+.problem__set--details {
+  margin-top: 40px;
+}
+.problem__set__doctor-particular {
+  float: left;
+  padding-top: 14px;
+  width: 390px;
+  min-height: 507px;
+  background-image: url("../../images/gehua/dawn.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+.problem__set__doctor-particular__avatar {
+  float: left;
+  width: 106px;
+  height: 106px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+}
+.problem__set__doctor-particular__wrap {
+  float: left;
+  width: 260px;
+  margin-left: 20px;
+}
+.problem__set__doctor-particular__wrap__prestige {
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+}
+.problem__set__doctor-particular__wrap__title {
+  margin-top: 12px;
+  line-height: 24px;
+  font-size: 20px;
+}
+.problem__set__doctor-particular__wrap__hospital {
+  margin-top: 12px;
+  line-height: 24px;
+  font-size: 20px;
+}
+.problem__set__doctor-particular__specialty {
+  padding-right: 30px;
+  margin-top: 40px;
+  line-height: 30px;
+  font-size: 20px;
+  color: #a9b6c3;
+}
+.problem__set__problem-particular {
+  float: right;
+  padding-top: 10px;
+  width: 666px;
+}
+.problem__set__problem-particular__title {
+  margin-bottom: 20px;
+  line-height: 28px;
+  font-size: 34px;
+}
+.problem__set__problem-particular__content {
+  min-height: 360px;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 3px solid #71a3c1;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.problem__set__problem-particular__content__ask {
+  padding: 20px 60px 20px 100px;
+  line-height: 24px;
+  font-size: 20px;
+}
+.problem__set__problem-particular__content__answer {
+  position: relative;
+  background-color: #3d799f;
+  min-height: 98px;
+}
+.problem__set__problem-particular__content__answer__avatar {
+  position: absolute;
+  top: 22px;
+  left: 23px;
+  width: 44px;
+  height: 44px;
+  -webkit-border-radius: 90px 90px 90px 90px;
+  -moz-border-radius: 90px 90px 90px 90px;
+  border-radius: 90px 90px 90px 90px;
+}
+.problem__set__problem-particular__content__answer__text {
+  padding: 20px 60px 20px 100px;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=gehua.css.map */

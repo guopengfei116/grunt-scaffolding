@@ -1,3 +1,4 @@
+
 /*
 *  通常服务器会动态压缩web所需文件，所以默认禁掉压缩。
 * */
@@ -14,7 +15,7 @@ if (isOpenCompress) {
     exports.compress = {
         expand : true,
         cwd : gruntProject.dest,
-        src : ['**/*'],
+        src : ['**/*.*','!*/img/*.*'],
         dest : 'compress_gzip/'
     };
 }else {
