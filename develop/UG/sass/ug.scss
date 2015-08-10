@@ -11,13 +11,16 @@ main {
     height: 500px;
 }
 
-footer {
+.footer {
     text-align: center;
-    ul {
+    &_ul {
         @include clearfix();
         li {
             width:25%;
             float: left;
         }
+    }
+    &-hover{
+
     }
 }
