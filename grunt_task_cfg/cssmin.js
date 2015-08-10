@@ -1,4 +1,9 @@
 
+exports.options = {
+    //compatibility : 'ie8', //兼容模式
+    noAdvanced : true //取消高级特性
+};
+
 /*
  * 只有在部署模式下才会压缩css文件
  * */
