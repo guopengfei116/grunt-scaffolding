@@ -4,8 +4,8 @@
   "description": "香港绿洲",
   "projectCfg": {
     "taskCfgPath": "grunt_task_cfg",
-    "src": "develop",
-    "prdDest": "production",
+    "src": "source",
+    "prdDest": "debug",
     "depDest": "deploy"
   },
   "devDependencies": {
