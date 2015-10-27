@@ -4,8 +4,6 @@
  * */
 exports.options = {
     alias : {
-        'main': gruntProject.src + '/mdata/js/main.js',
-        'common': gruntProject.src + '/mdata/js/main.js'
     }
 };
 
