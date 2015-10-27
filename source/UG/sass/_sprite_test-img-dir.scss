@@ -1,0 +1,158 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$activity-arrow-name: 'activity_arrow';
+$activity-arrow-x: 92px;
+$activity-arrow-y: 16px;
+$activity-arrow-offset-x: -92px;
+$activity-arrow-offset-y: -16px;
+$activity-arrow-width: 7px;
+$activity-arrow-height: 8px;
+$activity-arrow-total-width: 100px;
+$activity-arrow-total-height: 91px;
+$activity-arrow-image: '../img/test-img-dir.png';
+$activity-arrow: (92px, 16px, -92px, -16px, 7px, 8px, 100px, 91px, '../img/test-img-dir.png', 'activity_arrow', );
+$activity-circle-name: 'activity_circle';
+$activity-circle-x: 92px;
+$activity-circle-y: 0px;
+$activity-circle-offset-x: -92px;
+$activity-circle-offset-y: 0px;
+$activity-circle-width: 8px;
+$activity-circle-height: 8px;
+$activity-circle-total-width: 100px;
+$activity-circle-total-height: 91px;
+$activity-circle-image: '../img/test-img-dir.png';
+$activity-circle: (92px, 0px, -92px, 0px, 8px, 8px, 100px, 91px, '../img/test-img-dir.png', 'activity_circle', );
+$activity-crown-name: 'activity_crown';
+$activity-crown-x: 0px;
+$activity-crown-y: 0px;
+$activity-crown-offset-x: 0px;
+$activity-crown-offset-y: 0px;
+$activity-crown-width: 46px;
+$activity-crown-height: 46px;
+$activity-crown-total-width: 100px;
+$activity-crown-total-height: 91px;
+$activity-crown-image: '../img/test-img-dir.png';
+$activity-crown: (0px, 0px, 0px, 0px, 46px, 46px, 100px, 91px, '../img/test-img-dir.png', 'activity_crown', );
+$get-crown-name: 'get_crown';
+$get-crown-x: 0px;
+$get-crown-y: 46px;
+$get-crown-offset-x: 0px;
+$get-crown-offset-y: -46px;
+$get-crown-width: 46px;
+$get-crown-height: 45px;
+$get-crown-total-width: 100px;
+$get-crown-total-height: 91px;
+$get-crown-image: '../img/test-img-dir.png';
+$get-crown: (0px, 46px, 0px, -46px, 46px, 45px, 100px, 91px, '../img/test-img-dir.png', 'get_crown', );
+$miss-crown-name: 'miss_crown';
+$miss-crown-x: 46px;
+$miss-crown-y: 46px;
+$miss-crown-offset-x: -46px;
+$miss-crown-offset-y: -46px;
+$miss-crown-width: 46px;
+$miss-crown-height: 45px;
+$miss-crown-total-width: 100px;
+$miss-crown-total-height: 91px;
+$miss-crown-image: '../img/test-img-dir.png';
+$miss-crown: (46px, 46px, -46px, -46px, 46px, 45px, 100px, 91px, '../img/test-img-dir.png', 'miss_crown', );
+$sleeping-arrow-name: 'sleeping_arrow';
+$sleeping-arrow-x: 92px;
+$sleeping-arrow-y: 24px;
+$sleeping-arrow-offset-x: -92px;
+$sleeping-arrow-offset-y: -24px;
+$sleeping-arrow-width: 7px;
+$sleeping-arrow-height: 8px;
+$sleeping-arrow-total-width: 100px;
+$sleeping-arrow-total-height: 91px;
+$sleeping-arrow-image: '../img/test-img-dir.png';
+$sleeping-arrow: (92px, 24px, -92px, -24px, 7px, 8px, 100px, 91px, '../img/test-img-dir.png', 'sleeping_arrow', );
+$sleeping-circle-name: 'sleeping_circle';
+$sleeping-circle-x: 92px;
+$sleeping-circle-y: 8px;
+$sleeping-circle-offset-x: -92px;
+$sleeping-circle-offset-y: -8px;
+$sleeping-circle-width: 8px;
+$sleeping-circle-height: 8px;
+$sleeping-circle-total-width: 100px;
+$sleeping-circle-total-height: 91px;
+$sleeping-circle-image: '../img/test-img-dir.png';
+$sleeping-circle: (92px, 8px, -92px, -8px, 8px, 8px, 100px, 91px, '../img/test-img-dir.png', 'sleeping_circle', );
+$sleeping-crown-name: 'sleeping_crown';
+$sleeping-crown-x: 46px;
+$sleeping-crown-y: 0px;
+$sleeping-crown-offset-x: -46px;
+$sleeping-crown-offset-y: 0px;
+$sleeping-crown-width: 46px;
+$sleeping-crown-height: 46px;
+$sleeping-crown-total-width: 100px;
+$sleeping-crown-total-height: 91px;
+$sleeping-crown-image: '../img/test-img-dir.png';
+$sleeping-crown: (46px, 0px, -46px, 0px, 46px, 46px, 100px, 91px, '../img/test-img-dir.png', 'sleeping_crown', );
+$spritesheet-width: 100px;
+$spritesheet-height: 91px;
+$spritesheet-image: '../img/test-img-dir.png';
+$spritesheet-sprites: ($activity-arrow, $activity-circle, $activity-crown, $get-crown, $miss-crown, $sleeping-arrow, $sleeping-circle, $sleeping-crown, );
+$spritesheet: (100px, 91px, '../img/test-img-dir.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
