@@ -1,12 +1,48 @@
+var path = require('path');
 
 exports.options = {
-    livereload : '<% connect.options.livereload %>'
+    livereload : '<%= connect.options.livereload %>'
 };
-console.log(exports.options);
-exports.livereload = {
+
+exports.html = {
     files : [
-        '*/tpl/_index.html',
-        '*/sass/index.css',
-        '*/js/main.js'
+        'source/*/tpl/*.html',
+        'source/*/index.html'
+    ],
+    tasks : [
+        'string-replace'
+    ],
+    options : {
+        livereload : 79513
+    }
+};
+
+exports.tpl = {
+    files : [
+        'source/*/tpl/*.tpl',
+        'source/*/img/*.*',
+        'source/*/media/*.*'
+    ],
+    tasks : [
+        'copy'
     ]
 };
+
+exports.js = {
+    files : [
+        'source/**/*.js'
+    ],
+    tasks : [
+        'browserify'
+    ]
+};
+
+exports.sass = {
+    files : [
+        'source/**/*.scss'
+    ],
+    tasks : [
+        'sass'
+    ]
+};
+

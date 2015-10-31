@@ -11,7 +11,7 @@
     "taskCfgPath": "grunt_task_cfg",
     "src": "source",
     "prdDest": "debug",
-    "depDest": "deploy"
+    "depDest": "production"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

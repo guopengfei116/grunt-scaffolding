@@ -100,7 +100,7 @@ module.exports = function (grunt) {
     *  6、剩余未操作文件复制 --> 调试目录
     *  7、合并使用commonJs规范编写的js代码，可以在代码级别定义不同js模块的执行顺序 --> 调试目录
     * */
-    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sprite', 'sass', 'copy', 'browserify']);
+    grunt.registerTask('production', ['clean', 'concat', 'string-replace', 'sprite', 'sass', 'copy']);
 
     /**
      * 开发模式调试任务，通过运行 grunt 或 grunt production-debug 命令调用。构建流程：
