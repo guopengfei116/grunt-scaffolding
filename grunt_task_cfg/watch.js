@@ -11,10 +11,7 @@ exports.html = {
     ],
     tasks : [
         'string-replace'
-    ],
-    options : {
-        livereload : 79513
-    }
+    ]
 };
 
 exports.tpl = {

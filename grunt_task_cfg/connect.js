@@ -8,13 +8,14 @@ exports.options = {
     port : 9800,
     open : true,
     hostname : 'localhost',
-    livereload : 79513
+    livereload : 35729
 };
 
 /**
  * 非调试模式下
  * */
 if(!gruntProject.debug) {
+    exports.options.port = 9801;
     exports.options.keepalive = true;
 }
 
