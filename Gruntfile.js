@@ -126,5 +126,5 @@ module.exports = function (grunt) {
      * 2、开启静态文件服务器 --> 部署目录
      * 3、开启文件监听 --> 部署目录
      * */
-    grunt.registerTask('deploy-debug', ['deploy', 'connect']);
+    grunt.registerTask('deploy-debug', ['deploy', 'connect', 'watch']);
 };

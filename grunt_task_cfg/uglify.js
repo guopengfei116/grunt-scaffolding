@@ -11,7 +11,7 @@ if(!gruntProject.debug) {
     exports.deploy = {
         expand: true,
         cwd: gruntProject.prd,
-        src: ['*/js/*.js'],
+        src: ['*/js/*.js', '!*/js/*.min.js'],
         dest: gruntProject.dest
     };
 /*

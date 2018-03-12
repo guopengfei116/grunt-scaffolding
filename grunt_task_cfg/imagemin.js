@@ -9,14 +9,14 @@ if(!gruntProject.debug) {
     exports.deploy = {
         files: [{
             expand: true,
-            cwd: gruntProject.prd,
-            src: '*/img/*.{png,jpg,gif}',
+            //cwd: gruntProject.prd,
+            // 直接对源代码中的图片压缩即可，省的出现debug目录的只读权限
+            cwd: gruntProject.src,
+            src: ['*/img/**/*.{png,jpg,gif}'],
             dest: gruntProject.dest
         }]
     };
 }
-
-
 
 
 console.log('imagemin config initialized');

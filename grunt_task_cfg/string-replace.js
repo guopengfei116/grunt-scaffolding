@@ -18,9 +18,14 @@ exports.import = {
         {
             expand: true,
             cwd: gruntProject.src,
-            src: '*/tpl/*.html',
+            src: [ '*/tpl/*.{html,shtml,php}', '*/index.html' ],
             dest: gruntProject.prd
-        }
+        },
+        /*{
+             expand: false,
+             src: gruntProject.src + '/xx/tpl/index.html',
+             dest: gruntProject.prd + '/xx/index.html'
+         }*/
     ]
 };
 
